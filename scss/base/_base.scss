@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;900&family=PT+Sans&family=Secular+One&display=swap");
+// https://www.flaticon.com/
+/*Як в майбктньому будемо до них звертатись*/
+/*
+font-family: 'Fira Sans', sans-serif; 300, 400, 900 для заголовків
+font-family: 'PT Sans', sans-serif;  400 для тексту
+font-family: 'Secular One', sans-serif; 400 для Логотипа
+*/
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}

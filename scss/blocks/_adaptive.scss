@@ -1,0 +1,116 @@
+@media (max-width: 1300px) {
+  .footer {
+    // забрали колонку 1fr і точку .
+    grid-template-columns: /*1fr*/ /*пуста комірка*/ 1fr 1.5fr /*замість лого і копірайт віддали 1.5fr формі бо їй потрібніше*/ 1fr;
+    grid-template-rows: max-content 100px;
+    grid-template-areas:
+      ". social form logo"
+      ". . . copy";
+    padding-left: 5%;
+  }
+}
+.slider-dots,
+.slider-arrows,
+.orange {
+  height: 400px;
+}
+@media (max-width: 1200px) {
+  .main {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+    grid-template-areas:
+      "freshy freshy freshy healthy"
+      "slider-arrows slider-arrows slider-arrows healthy"
+      "thirsty thirsty thirsty thirsty"
+      "slider-dots slider-dots orange orange";
+  }
+  .slider-dots,
+  .slider-arrows,
+  .orange {
+    height:400px;
+  }
+
+  .wrapper-down {
+    grid-template-columns: auto;
+    grid-template-rows: max-content max-content;
+    grid-template-areas: "sidebar" "footer";
+  }
+  .common--row-rev {
+    padding-right: 90px;
+  }
+  // Разница между этими двумя записями заключается в том, что первая запись будет ограничивать ширину только элемента .common__desc,
+  //  который находится внутри элемента .sidebar. Вторая запись будет ограничивать ширину обоих элементов, .sidebar и .common__desc.
+  .sidebar .common__desc {
+    max-width: 200px;
+  }
+
+  .sidebar {
+    padding-left: 130px;
+  }
+  .header {
+    grid-template-columns: repeat(3, max-content);
+    grid-template-areas: "logo nav search";
+    justify-content: space-between;
+
+    padding: 20px;
+  }
+  @media (max-width: 840px) {
+    .footer {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto /*щоб на майбутнє тоже підлаштовувалось або можна сказати  grid-template-rows: repeat(4, max-content); тоді може не підлаштуватись */;
+      grid-template-areas: "social" "form" "logo" "copy";
+      gap: 30px;
+      justify-items: center;
+      text-align: center;
+
+      padding: 40px 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .main {
+      grid-template-columns: 1fr;
+      // grid-template-rows: auto;вже задано
+      grid-template-areas: "healthy" "slider-arrows" "freshy" "slider-dots" "thirsty" "orange";
+    }
+
+    .healthy {
+      padding: 30px;
+    }
+
+    .common--col-rev {
+      flex-direction: row-reverse;
+      justify-content: center;
+    }
+    .common--col-rev .common__desc,
+    .thirsty .common__desc,
+    .sidebar .common__desc,
+    .common__desc {
+      max-width: unset; //на малих пристроях забрали максимальну ширину,щоб при адаптації само тянулось
+    }
+    .title {
+      margin-right: 20px;
+    }
+
+    .common--row-rev {
+      padding-right: 30px; //вернули минулі падінги,щоб приблизилось по краям
+    }
+    .sidebar {
+      padding-left: 30px; //вернули минулі падінги,щоб приблизилось по краям
+    }
+  }
+
+  @media (max-width: 400px) {
+    .common {
+      padding: 10px;
+      gap: 10px;
+    }
+    .form__input {
+      width: 170px;
+    }
+    .header {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

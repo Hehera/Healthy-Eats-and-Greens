@@ -1,0 +1,144 @@
+.wrapper-down {
+  display: grid;
+  grid-template-columns: 4.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "footer sidebar";
+
+  // grid-template: "footer sidebar" 1fr / 4.5fr 1.5fr;
+}
+.footer {
+  padding-top: 80px;
+  grid-area: footer;
+  background-color: #2f2f2f;
+
+  color: #fff;
+
+  /*Сітка всередині футера*/
+  display: grid;
+  grid-template-columns: 1fr /*пуста комірка*/ 1fr 1.5fr /*замість лого і копірайт віддали 1.5fr формі бо їй потрібніше*/ 1fr;
+  grid-template-rows: max-content 100px;
+  grid-template-areas:
+    ". social form logo"
+    ". . . copy";
+  /*. . . - 3 пусті комірки в майбутньому,якщо там буде контент можна дати класс замість крапки*/
+
+  //   grid-template:
+  //     ". social form logo" max-content
+  //     ". . . copy" 100px / 1fr 1fr 1.5fr 1fr;
+
+  align-items: end; //вирівняли по низу
+  align-content: center;
+}
+.socials {
+  grid-area: social;
+
+  display: flex;
+  gap: 10px;
+}
+.socials__link {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  //рядковому елементу ul li не можна вказувати висоту і ширину,тому дописали  display: flex;
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+.form {
+  grid-area: form;
+
+  transform: uppercase; //все з ведикої букви
+}
+.form__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  transform: uppercase; //все з ведикої букви
+}
+.form__row {
+  display: flex; //вказали і gap пропадає між інпутом і submit-кнопкою
+}
+.form__input {
+  background: #ffffffde;
+
+  color: black;
+
+  height: 40px;
+  width: 200px;
+
+  padding: 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  &:focus {
+    background: #fff;
+  }
+}
+
+.form__submit-btn {
+  background: #00c2ba;
+
+  height: 40px;
+  padding: 0 20px;
+  text-transform: uppercase;
+
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: #01dfd7;
+  }
+  &:active {
+    background-color: #01928d;
+  }
+}
+.logo__img {
+  justify-self: center;
+}
+.footer__logo {
+  grid-area: logo;
+
+  width: 55px;
+  height: 80px;
+}
+.copy {
+  grid-area: copy;
+  text-align: center;
+
+  opacity: 0.5;
+
+  padding-bottom: 30px;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: #00c2ba;
+}
+.sidebar .title {
+  max-width: 100px;
+}
+.common {
+}
+.title {
+}
+.common__desc {
+}
+.btn {
+}
+.btn--rounded {
+  border-radius: 20px;
+
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.sidebar p + .btn {
+  margin-top: 20px;
+}

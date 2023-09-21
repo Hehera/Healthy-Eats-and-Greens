@@ -1,0 +1,17 @@
+.btn {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+.btn:active {
+  opacity: 0.6;
+}

@@ -1,0 +1,770 @@
+@charset "UTF-8";
+/* Reset and base styles  */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;900&family=PT+Sans&family=Secular+One&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+/*Як в майбктньому будемо до них звертатись*/
+/*
+font-family: 'Fira Sans', sans-serif; 300, 400, 900 для заголовків
+font-family: 'PT Sans', sans-serif;  400 для тексту
+font-family: 'Secular One', sans-serif; 400 для Логотипа
+*/
+body {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: max-content;
+  grid-template-columns: 2fr 1fr 2.5fr 0.5fr;
+  grid-template-areas: ". logo nav search";
+  align-items: center;
+  justify-content: start;
+  padding: 20px 0;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.logo {
+  grid-area: logo;
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ff4747;
+  width: 200px;
+  line-height: 1;
+}
+.logo:hover {
+  color: #01bcb5;
+}
+
+.header__nav {
+  grid-area: nav;
+  transform: translate(-15px);
+}
+.header__nav ul {
+  display: flex;
+  gap: 10px;
+}
+.header__nav a {
+  transition: color 0.2s;
+  padding: 15px;
+  color: black;
+  position: relative;
+  display: inline-block;
+}
+.header__nav a:hover {
+  color: #01bcb5;
+}
+.header__nav a:active {
+  color: #01928d;
+}
+.header__nav a::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 100%;
+  background-color: #01bcb5;
+  position: absolute;
+  left: 15px;
+  bottom: -200%;
+  transition: bottom 0.5s, background-color 0.2s;
+}
+.header__nav a:hover::after {
+  bottom: -80%;
+}
+.header__nav a:active::after {
+  background-color: #01928d;
+}
+
+.search {
+  grid-area: search;
+}
+
+.search__icon {
+  transition: fill 0.2s;
+}
+
+.search__icon:hover {
+  /*1) видалили fill всюди в svg  */
+  /*3)добавили класс search__icon в index.html - svg*/
+  fill: #01bcb5; /*2)змінили широту і висоту*/
+}
+
+.search__icon:active {
+  fill: #01928d;
+}
+
+/*MAIN*/
+.main {
+  display: grid;
+  grid-template-rows: 3fr 1fr 3fr;
+  grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+  grid-template-areas: "slider-arrows healthy thirsty thirsty" "slider-arrows healthy slider-dots orange" "freshy healthy slider-dots orange";
+}
+
+/*SLIDER ARROWS*/
+.slider-arrows {
+  position: relative;
+  grid-area: slider-arrows;
+}
+
+.slider-arrows__items-wrapper {
+  width: 100%;
+  height: 100%;
+  filter: brightness(80%);
+  display: flex;
+}
+
+.slider-arrows__nav {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transform: translateY(-50%);
+}
+
+.slider-arrows__arrow {
+  color: #fff;
+  font-size: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.slider-arrows__arrow:hover {
+  opacity: 0.8;
+}
+.slider-arrows__arrow:active {
+  opacity: 0.6;
+}
+
+.slider-dots {
+  grid-area: slider-dots;
+  position: relative;
+}
+
+.slider-dots__items-wrapper {
+  width: 100%;
+  height: 100%;
+  filter: brightness(80%);
+  display: flex;
+}
+
+.slider-dots__btn-wrapper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.slider-dots__nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+}
+
+.slider-dots__nav-item {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: opacity 0.2s;
+}
+.slider-dots__nav-item:hover {
+  opacity: 0.8;
+}
+.slider-dots__nav-item:active {
+  opacity: 0.6;
+}
+
+.slider-dots__nav-item--active {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.slider-dots__items, .slider-arrows__items {
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.btn {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:active {
+  opacity: 0.6;
+}
+
+/*FRE­SHY*/
+.freshy {
+  grid-area: freshy;
+  background-color: #bee163;
+}
+
+.common {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+.title {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  width: 140px;
+}
+.title span {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.title span::first-line {
+  font-weight: 900;
+}
+
+.common__desc {
+  max-width: 60%;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+}
+
+/*HEALTHY*/
+.healthy {
+  grid-area: healthy;
+  background-color: #ff494b;
+  padding-bottom: 85px;
+}
+
+.common--col-rev {
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+}
+
+.common--col-rev .common--col-rev {
+  max-width: 140px;
+}
+
+.common--row-rev {
+  flex-direction: row-reverse;
+}
+
+.common--row-rev .common__desc {
+  text-align: right;
+}
+
+/*THIRSTY*/
+.thirsty {
+  grid-area: thirsty;
+  background-color: #ffba4a;
+}
+
+.thirsty .common__desc {
+  max-width: 200px;
+}
+
+/*ORANGE*/
+.orange {
+  grid-area: orange;
+  position: relative;
+}
+
+.orange img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(60%);
+}
+
+.orange__btn-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orange__arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transition: opacity 0.2s;
+}
+.orange__arrow:hover {
+  opacity: 0.8;
+}
+.orange__arrow:active {
+  opacity: 0.6;
+}
+
+.slider-arrows__items,
+.slider-dots__items {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper-down {
+  display: grid;
+  grid-template-columns: 4.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "footer sidebar";
+}
+
+.footer {
+  padding-top: 80px;
+  grid-area: footer;
+  background-color: #2f2f2f;
+  color: #fff;
+  /*Сітка всередині футера*/
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr 1fr;
+  grid-template-rows: max-content 100px;
+  grid-template-areas: ". social form logo" ". . . copy";
+  /*. . . - 3 пусті комірки в майбутньому,якщо там буде контент можна дати класс замість крапки*/
+  align-items: end;
+  align-content: center;
+}
+
+.socials {
+  grid-area: social;
+  display: flex;
+  gap: 10px;
+}
+
+.socials__link {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+.socials__link:hover {
+  opacity: 0.8;
+}
+.socials__link:active {
+  opacity: 0.6;
+}
+
+.form {
+  grid-area: form;
+  transform: uppercase;
+}
+
+.form__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  transform: uppercase;
+}
+
+.form__row {
+  display: flex;
+}
+
+.form__input {
+  background: rgba(255, 255, 255, 0.8705882353);
+  color: black;
+  height: 40px;
+  width: 200px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.form__input:focus {
+  background: #fff;
+}
+
+.form__submit-btn {
+  background: #00c2ba;
+  height: 40px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+}
+.form__submit-btn:hover {
+  background-color: #01dfd7;
+}
+.form__submit-btn:active {
+  background-color: #01928d;
+}
+
+.logo__img {
+  justify-self: center;
+}
+
+.footer__logo {
+  grid-area: logo;
+  width: 55px;
+  height: 80px;
+}
+
+.copy {
+  grid-area: copy;
+  text-align: center;
+  opacity: 0.5;
+  padding-bottom: 30px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #00c2ba;
+}
+
+.sidebar .title {
+  max-width: 100px;
+}
+
+.btn--rounded {
+  border-radius: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.sidebar p + .btn {
+  margin-top: 20px;
+}
+
+@media (max-width: 1300px) {
+  .footer {
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: max-content 100px;
+    grid-template-areas: ". social form logo" ". . . copy";
+    padding-left: 5%;
+  }
+}
+.slider-dots,
+.slider-arrows,
+.orange {
+  height: 400px;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+    grid-template-areas: "freshy freshy freshy healthy" "slider-arrows slider-arrows slider-arrows healthy" "thirsty thirsty thirsty thirsty" "slider-dots slider-dots orange orange";
+  }
+  .slider-dots,
+  .slider-arrows,
+  .orange {
+    height: 400px;
+  }
+  .wrapper-down {
+    grid-template-columns: auto;
+    grid-template-rows: max-content max-content;
+    grid-template-areas: "sidebar" "footer";
+  }
+  .common--row-rev {
+    padding-right: 90px;
+  }
+  .sidebar .common__desc {
+    max-width: 200px;
+  }
+  .sidebar {
+    padding-left: 130px;
+  }
+  .header {
+    grid-template-columns: repeat(3, max-content);
+    grid-template-areas: "logo nav search";
+    justify-content: space-between;
+    padding: 20px;
+  }
+}
+@media (max-width: 1200px) and (max-width: 840px) {
+  .footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "social" "form" "logo" "copy";
+    gap: 30px;
+    justify-items: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+}
+@media (max-width: 1200px) and (max-width: 600px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-areas: "healthy" "slider-arrows" "freshy" "slider-dots" "thirsty" "orange";
+  }
+  .healthy {
+    padding: 30px;
+  }
+  .common--col-rev {
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  .common--col-rev .common__desc,
+  .thirsty .common__desc,
+  .sidebar .common__desc,
+  .common__desc {
+    max-width: unset;
+  }
+  .title {
+    margin-right: 20px;
+  }
+  .common--row-rev {
+    padding-right: 30px;
+  }
+  .sidebar {
+    padding-left: 30px;
+  }
+}
+@media (max-width: 1200px) and (max-width: 400px) {
+  .common {
+    padding: 10px;
+    gap: 10px;
+  }
+  .form__input {
+    width: 170px;
+  }
+  .header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.menu-icon {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .header {
+    grid-template-columns: repeat(2, max-content);
+    grid-template-areas: "logo menu-icon";
+  }
+  .header__nav {
+    font-size: 17px;
+    display: none;
+    transform: none;
+    text-align: center;
+  }
+  .search {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+    grid-area: menu-icon;
+  }
+  .header--mobile {
+    min-height: 100vh;
+    grid-template: "logo menu-icon" max-content "nav nav" max-content "search search";
+    align-content: space-between;
+    justify-items: center;
+  }
+  .header__nav ul {
+    flex-direction: column;
+    align-items: сenter;
+  }
+  .header--mobile .search,
+  .header--mobile .header__nav {
+    display: block;
+  }
+  .header__nav a::after {
+    display: none;
+  }
+  .header__nav a {
+    padding: 10px 20px;
+  }
+}
+.menu-icon__line,
+.menu-icon::after,
+.menu-icon::before {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+}
+
+.menu-icon::after,
+.menu-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-icon::before {
+  top: 0;
+  transition: top 0.3s 0.3s, transform 0.3s;
+}
+
+.menu-icon::after {
+  bottom: 0;
+  transition: bottom 0.3s 0.3s, transform 0.3s;
+}
+
+.menu-icon--active .menu-icon__line {
+  display: none;
+}
+
+.menu-icon--active::before {
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+  transition: top 0.3s, transform 0.3s 0.3s;
+}
+
+.menu-icon--active::after {
+  transform: translateY(50%) rotate(-45deg);
+  bottom: 50%;
+  transition: bottom 0.3s, transform 0.3s;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthy Eats and Greens</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!--Коли пишемо блок,а не елемент вказуємо одне тире посеридині при назві класів -->
+    <div class="container">
+      <header class="header">
+        <h1 class="logo">Healthy Eats and Greens</h1>
+        <nav class="header__nav">
+          <ul>
+            <!-- li*5>a -->
+            <li><a href="#!">HOME</a></li>
+            <li><a href="#!">ABOUT</a></li>
+            <li><a href="#!">PRODUCTS</a></li>
+            <li><a href="#!">LOCATION</a></li>
+            <li><a href="#!">CONTACT</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="menu-icon">
+          <div class="menu-icon__line"></div>
+        </button>
+
+        <button type="button" class="search">
+          <svg
+            class="search__icon"
+            width="30"
+            height="30"
+            viewBox="0 0 18 18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.6 18L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.146 12.3707 1.888 11.112C0.63 9.85333 0.000666667 8.316 0 6.5C0 4.68333 0.629333 3.146 1.888 1.888C3.14667 0.63 4.684 0.000666667 6.5 0C8.31667 0 9.854 0.629333 11.112 1.888C12.37 3.14667 12.9993 4.684 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L18 16.6L16.6 18ZM6.5 11C7.75 11 8.81267 10.5623 9.688 9.687C10.5633 8.81167 11.0007 7.74933 11 6.5C11 5.25 10.5623 4.18733 9.687 3.312C8.81167 2.43667 7.74933 1.99933 6.5 2C5.25 2 4.18733 2.43767 3.312 3.313C2.43667 4.18833 1.99933 5.25067 2 6.5C2 7.75 2.43767 8.81267 3.313 9.688C4.18833 10.5633 5.25067 11.0007 6.5 11Z"
+            />
+          </svg>
+        </button>
+      </header>
+
+      <main class="main">
+        <!--SLIDER ARROWS-->
+        <div class="slider-arrows">
+          <div class="slider-arrows__items-wrapper">
+            <img src="./img/arrow-slider-01.jpg" alt="" class="slider-arrows__items"/>
+            <img src="./img/arrow-slider-02.jpg" alt="" class="slider-arrows__items"/>
+            <img src="./img/arrow-slider-03.jpg" alt="" class="slider-arrows__items"/>
+            <img src="./img/arrow-slider-04.jpg" alt="" class="slider-arrows__items"/>
+          </div>
+
+          <div class="slider-arrows__nav">
+            <button class="slider-arrows__arrow slider-arrows__arrow--left"><</button>
+            <button class="btn slider-arrows__btn">Start drinking</button>
+            <button class="slider-arrows__arrow slider-arrows__arrow--right">></button>
+          </div>
+        </div>
+        <!--SLIDER ARROWS-->
+
+        <!--SLIDER DOTS-->
+        <div class="slider-dots">
+            <img src="./img/slider-dots-01.jpg" alt="" class="slider-dots__items"/>
+            <img src="./img/slider-dots-02.jpg" alt="" class="slider-dots__items"/>
+            <img src="./img/slider-dots-03.jpg" alt="" class="slider-dots__items"/>
+            <img src="./img/slider-dots-04.jpg" alt="" class="slider-dots__items"/>
+
+          
+
+          <div class="slider-dots__btn-wrapper">
+            <button class="btn slider-dots__btn">Start drinking</button>
+          </div>
+
+          <div class="slider-dots__nav">
+            <button class="slider-dots__nav-item"></button>
+            <button
+              class="slider-dots__nav-item slider-dots__nav-item--active"
+            ></button>
+            <button class="slider-dots__nav-item"></button>
+            <button class="slider-dots__nav-item"></button>
+          </div>
+        </div>
+        <!--SLIDER DOTS-->
+
+        <!--FRE­SHY-->
+        <article class="freshy common">
+          <h2 class="title">GO GREEN AND STAY <span>FRE­SHY</span></h2>
+          <div class="common__desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
+            iste aut, inventore quae voluptatem quam accusantium ipsam vitae
+            pariatur eius adipisci similique cupiditate! Dolores eos libero
+            natus quos obcaecati id ipsam iste consequatur mollitia at alias
+            voluptate sunt reiciendis tenetur quaerat eaque, sequi itaque.
+            Perferendis nihil fugit reiciendis quae quisquam.
+          </div>
+        </article>
+        <!--FRE­SHY-->
+        <!--HEALTHY-->
+        <article class="healthy common common--col-rev">
+          <h2 class="title">WORRY LESS DRINK<span>HEAL­THY</span></h2>
+          <div class="common__desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam ea
+            sequi dolores non, itaque, eveniet a dolorem accusamus est
+            praesentium inventore nihil! Laborum modi deserunt debitis eaque
+            amet excepturi odit!
+          </div>
+        </article>
+        <!--HEALTHY-->
+        <!--THIRSTY-->
+        <article class="thirsty common common--row-rev">
+          <h2 class="title">ARE YOU SUMMER <span>THIR­STY?</span></h2>
+          <div class="common__desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Reprehenderit pariatur aut labore quis voluptatum quisquam voluptas
+            reiciendis nesciunt odio harum officia minima magnam temporibus,
+            numquam dolore illo iure, recusandae non.
+          </div>
+        </article>
+        <!--THIRSTY-->
+        <!--ORANGE-->
+        <div class="orange">
+          <img src="./img/orange.jpg" alt="" />
+          <div class="orange__btn-wrapper">
+            <button class="btn orange__btn">Start drinking</button>
+          </div>
+
+          <div class="orange__nav">
+            <a class="orange__arrow" href="#!">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 117 114"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M63.9654 89.899C63.7973 89.7342 63.6641 89.5387 63.5734 89.3236C63.4827 89.1085 63.4362 88.8781 63.4367 88.6454C63.4372 88.4127 63.4845 88.1825 63.5761 87.9677C63.6677 87.753 63.8016 87.558 63.9704 87.3939L93.5354 58.6087L18.2202 58.4587C17.7398 58.4578 17.2795 58.2703 16.9405 57.9376C16.6015 57.605 16.4116 57.1543 16.4126 56.6847C16.4135 56.2152 16.6052 55.7653 16.9455 55.4339C17.2858 55.1026 17.7469 54.917 18.2272 54.9179L93.5424 55.0679L64.0922 26.1651C63.9243 26.0003 63.7912 25.8048 63.7006 25.5897C63.6099 25.3746 63.5635 25.1442 63.564 24.9115C63.5644 24.6789 63.6118 24.4487 63.7033 24.2339C63.7948 24.0192 63.9286 23.8242 64.0972 23.66C64.2658 23.4959 64.4659 23.3658 64.6859 23.2772C64.9059 23.1886 65.1417 23.1433 65.3796 23.1438C65.6176 23.1442 65.8532 23.1905 66.0728 23.28C66.2925 23.3694 66.492 23.5003 66.66 23.6651L99.1966 55.597C99.3647 55.7617 99.4979 55.9572 99.5886 56.1724C99.6793 56.3875 99.7257 56.6179 99.7253 56.8506C99.7248 57.0832 99.6774 57.3135 99.5859 57.5283C99.4943 57.743 99.3603 57.938 99.1916 58.1021L66.5281 89.9041C66.3596 90.0684 66.1596 90.1986 65.9395 90.2872C65.7195 90.3759 65.4837 90.4213 65.2457 90.4208C65.0077 90.4203 64.7721 90.374 64.5524 90.2845C64.3327 90.1949 64.1332 90.0639 63.9654 89.899Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!--ORANGE-->
+      </main>
+      <!--FOOTER-->
+      <div class="wrapper-down">
+        <footer class="footer">
+          <ul class="socials">
+            <li>
+              <a href="#!" class="socials__link"
+                ><img src="./img/social-insta.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#!" class="socials__link"
+                ><img src="./img/social-twitter.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#!" class="socials__link"
+                ><img src="./img/social-facebook.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#!" class="socials__link"
+                ><img src="./img/social-linkedin.svg" alt=""
+              /></a>
+            </li>
+          </ul>
+
+          <form action="#!" class="form">
+            <p class="form__title">Sign up <br />for a new new</p>
+            <div class="form__row">
+              <input type="text" class="form__input" placeholder="your email" />
+              <button class="form__submit-btn" type="submit">Submit</button>
+            </div>
+          </form>
+          <img
+            src="./img/logo-footer.png"
+            class="logo__img footer__logo"
+            alt=""
+          />
+          <p class="copy">© 2017. All rights reserved.</p>
+        </footer>
+
+        <div class="sidebar common">
+          <h2 class="title">NOW TRY OUT OUR<span>JUI&shy;SY</span></h2>
+          <div class="common__desc">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+              facilis tempore sed consequuntur, dicta eius! Officia nam cumque
+              dignissimos asperiores. Fugit debitis ab sunt quibusdam.
+            </p>
+            <button class="btn btn--rounded">MORE</button>
+          </div>
+        </div>
+      </div>
+      <!--FOOTER-->
+    </div>
+    <!--JS-->
+    <script src="./js/script.js"></script>
+    <script src="./js/slider-arrow.js"></script>
+    <script src="./js/slider-dots.js"></script>
+  </body>
+</html>

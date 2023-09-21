@@ -1,0 +1,107 @@
+.header {
+  display: grid;
+  grid-template-rows: max-content; //весь ряд розтянувся на всю ширину
+  grid-template-columns: 2fr 1fr 2.5fr 0.5fr;
+  grid-template-areas: ". logo nav search"; //щоб розрахувати,скільки нас комірок треба колонки помножити на ряди.
+  // !!!/* . - це ми пропустили 2fr*/
+
+  // Наприклад  max-content(1) * 1fr 1fr 100px (3) = 3
+
+  // grid-template: "logo nav search" max-content /  2fr 1fr 2.5fr 0.5fr;//в один рядок як записати
+  //Щоб перевірити чи кожен класс добавився до нашої комірки: F12 - Show area names - Grid overlays/header.header
+
+  align-items: center; //вертикально
+  justify-content: start; //горизонтально-зліва
+
+  padding: 20px 0;
+
+  text-transform: uppercase; // з великої букви все
+  overflow: hidden; // 10
+}
+
+// Амперсант в CSS используется для создания селекторов на основе родительского элемента.
+
+.logo {
+  grid-area: logo;
+  // justify-self: end; //горизонтально-вправо
+
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+
+  color: #ff4747;
+
+  width: 200px;
+
+  line-height: 1 /*1 = 24px*/;
+  &:hover {
+    color: #01bcb5;
+  }
+}
+.header__nav {
+  grid-area: nav;
+
+  transform: translate(-15px); //Корекція
+
+  & ul {
+    display: flex;
+    gap: 10px;
+  }
+  & a {
+    transition: color 0.2s;
+    padding: 15px; //для того,щоб cursor:pointer наводився не тільки на слові,а трохи рядом
+    color: black;
+
+    position: relative; //2
+    display: inline-block; //3 силка(прямокутник) займає рівно скільки місця скільки наш контент
+  }
+  & a:hover {
+    color: #01bcb5;
+  }
+  & a:active {
+    //active - при натисканні колір стає темнішим
+    color: #01928d;
+  }
+  //Прямокутник
+  & a::after {
+    content: "";
+    display: block;
+
+    // width: 100%;   було на початку,коли лише відображали Прямокутник
+    // height: 100%;
+    width: 80%; //4
+    height: 100%;
+    background-color: #01bcb5;
+
+    position: absolute; //1(Прямокутник:ховер - ефект)
+    // left: 0;     було на початку,коли лише відображали Прямокутник
+    // bottom: 0;
+    left: 15px; //6
+    bottom: -200%; //5
+
+    transition: bottom 0.5s, background-color 0.2s; // 9
+  }
+
+  & a:hover::after/*силка/наводим/вибираємо псевдоелемент*/ {
+    bottom: -80%; //7
+  }
+
+  & a:active::after/*При натискані прямокутник стає того ж кольору,що і силка при натисканні */ {
+    background-color: #01928d; //8
+  }
+}
+.search {
+  grid-area: search;
+}
+.search__icon {
+  transition: fill 0.2s;
+}
+.search__icon:hover {
+  /*1) видалили fill всюди в svg  */
+  /*3)добавили класс search__icon в index.html - svg*/
+  fill: #01bcb5; /*2)змінили широту і висоту*/
+}
+
+.search__icon:active {
+  fill: #01928d;
+}

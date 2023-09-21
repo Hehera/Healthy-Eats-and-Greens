@@ -1,0 +1,147 @@
+/*MAIN*/
+.main {
+  display: grid;
+  grid-template-rows: 3fr 1fr 3fr;
+  grid-template-columns: 2fr 1fr 1.5fr 1.5fr; // 3 * 4 = 12 всього комірок вийшло(class-grid.png)
+  grid-template-areas:
+  //без ком писати класси
+
+    "slider-arrows healthy thirsty thirsty"
+    "slider-arrows healthy slider-dots orange"
+    "freshy healthy slider-dots orange";
+
+  //як написати в один рядок
+  //   grid-column:"slider-arrows healthy thirsty thirsty" 3fr,
+  //               "slider-arrows healthy slider-dots orange" 1fr,
+  //               "fleshy healthy slider-dots orange" 3fr / 2fr 1fr 1.5fr 1.5fr;
+}
+/*SLIDER ARROWS*/
+.slider-arrows {
+  position: relative;
+  grid-area: slider-arrows;
+}
+.slider-arrows__items-wrapper {
+  width: 100%;
+  height: 100%;
+
+  filter: brightness(80%);
+
+  display: flex;
+  //   object-fit: cover задали його в reset.scss
+}
+.slider-arrows__items {
+}
+.slider-arrows__nav {
+  position: absolute;
+  left: 0;
+  top: 50%; //1
+
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  transform: translateY(-50%); //2
+}
+.slider-arrows__arrow {
+  color: #fff;
+  font-size: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+
+  //   display: inline-block;//вказали це в reset.scss,щоб задати ширину і висоту
+  height: 50px;
+  width: 50px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+.slider-arrows__arrow--left {
+}
+
+.slider-arrows__btn {
+}
+.slider-arrows__arrow--right {
+}
+
+// <!--SLIDER DOTS-->
+.slider-dots {
+  grid-area: slider-dots;
+  position: relative;
+}
+.slider-dots__items-wrapper {
+  width: 100%;
+  height: 100%;
+
+  filter: brightness(80%);
+
+  display: flex;
+}
+.slider-dots__items {
+}
+.slider-dots__btn-wrapper {
+  position: absolute;
+  left: 0;
+  top: 50%; //1
+
+  transform: translateY(-50%);
+
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn {
+}
+.slider-dots__btn {
+}
+.slider-dots__nav {
+  width: 100%; //4
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  position: absolute; //1
+  left: 0; //2
+  bottom: 20px; //3
+}
+.slider-dots__nav-item {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+.slider-dots__nav-item--active {
+  background-color: transparent; //прозорий
+  border: 1px solid #fff;
+}
+
+// Animation
+
+.slider-dots__items, .slider-arrows__items {
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
